@@ -6,10 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Menu - Sistemas Distribuidos</title>
+        <title>Usuarios - Sistemas Distribuidos</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -18,7 +18,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="red">
+        <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
         <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
         
     </head>
@@ -36,9 +36,9 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="./">Inicio</a></li>
+                <li><a href="./">Inicio</a></li>
                 <li><a href="Cuentas.jsp">Cuentas</a></li>
-                <li><a href="Usuarios.jsp">Usuarios</a></li>
+                <li class="active"><a href="Usuarios.jsp">Usuarios</a></li>
                 <li><a href="Login?action=out">Cerrar Sesión</a></li>
               </ul>
             </div><!--/.nav-collapse -->
@@ -50,8 +50,11 @@
             Bienvenido ${usuario}!
         </div>  
         <div>
-                <a class="btn btn-lg" id="usuarios" href="Usuarios" >Ver usuarios</a>
-                <a class="btn btn-lg" id="cuentas" href="Cuentas" >Ver Cuentas</a>
+                <a class="btn btn-lg" id="usuarios" href="./" >Volver</a>
         </div>
-        </body>
+        <div>
+            Hola Usuarios!
+        </div>
+            
+    </body>
 </html>

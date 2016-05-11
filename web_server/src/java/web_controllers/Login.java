@@ -1,3 +1,5 @@
+package web_controllers;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
@@ -15,11 +17,14 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String action=(request.getPathInfo()!=null?request.getPathInfo():"");
+        String action=(request.getParameter("action")!=null?request.getParameter("action"):"");
         HttpSession sesion = request.getSession();
-        if(action.equals("/out")){
+        
+        if(action.equals("out")){
             sesion.invalidate();
-            response.sendRedirect("/home.jsp");
+            request.getSession().setAttribute("error", "Sesión Finalizada");
+            response.sendRedirect("Login.jsp");
+            
         }else{
             response.sendRedirect("Login.jsp");
         }
@@ -35,7 +40,7 @@ public class Login extends HttpServlet {
             sesion.setAttribute("usuario", usu);
             response.sendRedirect("Menu.jsp");
         } else {
-            request.getSession().setAttribute("error", "Usuario no valido");
+            request.getSession().setAttribute("error", "Usuario no válido");
             response.sendRedirect("Login.jsp");
         }
     }
